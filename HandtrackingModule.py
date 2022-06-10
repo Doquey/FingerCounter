@@ -39,9 +39,8 @@ class handDetector():
         return frame, self.results.multi_hand_landmarks
 
     def ListLandmarks(self, frame, handNo=0, draw=True):
-
+        lmlist = []
         if self.results.multi_hand_landmarks:
-            lmlist = []
             if len(self.results.multi_hand_landmarks) != 1:
                 # get the landmarks for the specific hand we want.
                 myHand = self.results.multi_hand_landmarks[handNo]
