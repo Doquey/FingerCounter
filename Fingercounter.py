@@ -41,10 +41,16 @@ while True:
                     print('finger open')
                     fingerups.append(True)  
 
-    #we take the length of the fingerups and draw it over the blank image
-    cv.putText(blank, f'{len(fingerups)}', (37, 60),
-               cv.FONT_HERSHEY_COMPLEX, 1.5, (255, 255, 255), 3)
-    frame[0:100, 0:100] = blank
+    #takes the length of the fingerups and draw it over the blank image
+    
+    #cv.putText(blank, f'{len(fingerups)}', (37, 60),cv.FONT_HERSHEY_COMPLEX, 1.5, (255, 255, 255), 3)
+    
+    #takes the length of the fingerups and draw it on our image
+    cv.putText(frame, f'{len(fingerups)}', (frame.shape[0]//6, frame.shape[1]//6),
+               cv.FONT_HERSHEY_COMPLEX, 2.5, (255, 0, 0), 3)
+    #uses the blank image as a background to our counter.
+
+    #frame[0:100, 0:100] = blank
     cv.imshow('frame', frame)
     if cv.waitKey(2) & 0xff == ord('d'):
         break
