@@ -37,17 +37,7 @@ while True:
                     print('finger open')
                     fingerups.append(True)
 
-    # another method to know if a finger is closed or open would be :
-    # if len(lmlist) != 0:
-    #     for id in tipids:
-
-    # if id != 4:
-    #         if lmlist[id][2] < lmlist[(id-2)][2]:
-    #             print('finger open')
-    #     else:
-    #         if lmlist[id][2] < lmlist[id-1][2]:
-    #             print('finger open')
-    # print('all fingers closed')
+   
     cv.putText(blank, f'{len(fingerups)}', (37, 60),
                cv.FONT_HERSHEY_COMPLEX, 1.5, (255, 255, 255), 3)
     frame[0:100, 0:100] = blank
